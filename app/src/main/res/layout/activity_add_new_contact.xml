@@ -20,27 +20,36 @@
         android:background="#D9D1D1"
         tools:context=".AddNewContactActivity">
 
+        <ImageView
+            android:layout_width="123dp"
+            android:layout_height="118dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_contact_mail"
+            app:layout_constraintBottom_toTopOf="@+id/contactName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <EditText
             android:id="@+id/contactName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="268dp"
+            android:layout_marginTop="320dp"
             android:hint="Contact's name"
             android:text="@={contact.name}"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:text="@={contact.email}"
             android:id="@+id/contactMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="Contact's email"
+            android:text="@={contact.email}"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,17 +58,20 @@
             app:layout_constraintTop_toBottomOf="@+id/contactName" />
 
         <Button
-            android:onClick="@{clickHandler::onAddContactBtnClicked}"
             android:id="@+id/addContact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@color/black"
+            android:onClick="@{clickHandler::onAddContactBtnClicked}"
             android:text="ADD CONTACT"
             android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contactMail" />
+            app:layout_constraintTop_toBottomOf="@+id/contactMail"
+            app:layout_constraintVertical_bias="0.048" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:onClick="@{clickHandler::backToAllContacts}"
